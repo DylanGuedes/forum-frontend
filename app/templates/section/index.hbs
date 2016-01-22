@@ -1,0 +1,22 @@
+<h1>{{model.section.name}}</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Subtitle</th>
+      <th>Lead</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each model.section.topics as |topic|}}
+      <tr>
+        <td>{{#link-to 'topic.index' topic.id}}{{topic.title}}{{/link-to}}</td>
+        <td>{{topic.subtitle}}</td>
+        <td>{{topic.content}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+

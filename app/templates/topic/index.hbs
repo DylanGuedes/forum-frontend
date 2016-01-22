@@ -1,0 +1,13 @@
+<h1>{{model.topic.title}}</h1>
+
+{{#each model.topic.posts as |node|}}
+  <div class="row post-block">
+    <div class="col-md-4">
+      {{#link-to 'user.index' node.author.id}}{{node.author.name}}{{/link-to}}
+    </div>
+
+    <div class="col-md-8">
+      {{node.content}}
+    </div>
+  </div>
+{{/each}}

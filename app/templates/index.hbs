@@ -1,0 +1,19 @@
+<div class="index">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {{#each model as |section|}}
+        <tr>
+          <td>{{#link-to 'section' section.id}}{{section.name}}{{/link-to}}</td>
+          <td>{{section.description}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
