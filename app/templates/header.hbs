@@ -2,16 +2,15 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <ul class="nav navbar-nav">
-        <li>{{#link-to 'users.new'}}Sign Up{{/link-to}}</li>
-        {{session}}
-        {{#if session.isAuthenticated}}
+        <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+        {{#if authManager.isAuthenticated}}
+          <li>{{#link-to 'user' authManager.currentUser}}{{authManager.currentUser.username}}{{/link-to}}</li>
           <li>{{#link-to 'users.index'}}Users{{/link-to}}</li>
+          <li>{{#link-to 'sections.index'}}Sections{{/link-to}}</li>
         {{else}}
-          <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+          <li>{{#link-to 'users.new'}}Sign Up{{/link-to}}</li>
           <li>{{#link-to 'login'}}Signin{{/link-to}}</li>
         {{/if}}
-        <li>{{#link-to 'index'}}Home{{/link-to}}</li>
-        <li>{{#link-to 'sections.index'}}Sections{{/link-to}}</li>
       </ul>
     </div>
   </div>
