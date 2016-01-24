@@ -3,6 +3,7 @@
     <div class="navbar-header">
       <ul class="nav navbar-nav">
         <li>{{#link-to 'users.new'}}Sign Up{{/link-to}}</li>
+        {{session}}
         {{#if session.isAuthenticated}}
           <li>{{#link-to 'users.index'}}Users{{/link-to}}</li>
         {{else}}
