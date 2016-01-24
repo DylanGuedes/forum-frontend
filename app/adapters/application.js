@@ -3,7 +3,7 @@ import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
 export default DS.RESTAdapter.extend(DataAdapterMixin, {
   host: 'http://localhost:4000/api',
-  authorizer: 'authorizer:token',
+  authorizer: 'authorizer:application',
 
   shouldReloadAll() {
     return true;

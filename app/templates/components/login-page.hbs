@@ -2,15 +2,12 @@
 
 <div class="container user-signin">
   <form {{action 'authenticate' on='submit'}}>
-    <label for="identification">Username</label>
-    {{input value=identification id="identification" class="form-control"}}
+    <label for="login">Username</label>
+    {{input value=login id="login" class="form-control"}}
 
     <label for="password">Password</label>
     {{input id="password" placeholder="Enter password" type="password" value=password class="form-control"}}
 
     <button type="submit">Login</button>
-    {{#if errorMessage}}
-      <p>{{errorMessage}}</p>
-    {{/if}}
   </form>
 </div>
