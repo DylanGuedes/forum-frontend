@@ -14,6 +14,8 @@ Router.map(function() {
     });
   });
 
+  this.route('signin');
+
   this.resource('sections', function() {
     this.resource('section', { path: "/:section_id" }, function() {
       this.route('edit');
