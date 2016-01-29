@@ -1,4 +1,10 @@
-<h4>Section/index, model: {{model}}, model/section: {{model.section}}, sectionid: {{model.sectionId}}, name: {{model.section.name}}</h4>
+<ol class="breadcrumb">
+  <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+  <li>{{model.section.name}}</li>
+</ol>
+
+{{model.section}}
+<h1>aqui</h1>
 <table class="table table-hover">
   <thead>
     <tr>

@@ -1,11 +1,23 @@
-<h1>Section/topics/topic/new</h1>
-<form class="post-form">
-  <p>
-    <label for="content">Content</label>
-    {{input value=model.content id="content" class="form-control"}}
-  </p>
 
-{{authManager}}
-  <button {{action 'save' authManager}} id="save" class="btn btn-primary create-section-button">Save</button>
-</form>
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <p class="panel-title">New Post</p>
+  </div>
 
+  <div class="panel-body">
+    <form class="post-form">
+      <div class="row">
+        <div class="col-md-8">
+          <p>
+            {{textarea type=textarea rows=10 value=model.content id="content" class="form-control"}}
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h4>Live Preview</h4>
+          {{model.content}}
+        </div>
+      </div>
+      <button {{action 'save' authManager}} id="save" class="btn btn-success create-section-button">Save</button>
+    </form>
+  </div>
+</div>
