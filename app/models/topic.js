@@ -7,8 +7,4 @@ export default DS.Model.extend({
   section: DS.belongsTo('section', { async: true }),
   author: DS.belongsTo('user', { async: true }),
   posts: DS.hasMany('post', { async: true })
-  //sectionId: function() {
-  //  var topicSection = this.get('section');
-  //  return topicSection.id;
-  //}.property('section'),
 });

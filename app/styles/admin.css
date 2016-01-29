@@ -1,0 +1,13 @@
+.center {
+  text-align: center;
+}
+
+.create-section-button {
+  font-size: 15px;
+}
+
+.create-section-button:hover {
+  /* transition-duration: 0.3s; */
+  /* transition-delay:0.1s; */
+  /* transition-timing-function: linear; */
+}

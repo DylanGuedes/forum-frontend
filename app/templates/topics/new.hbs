@@ -1,0 +1,14 @@
+<h4>Topics/new, model: {{model}}</h4>
+<h2>New topic for {{section.name}}</h2>
+
+<p>
+  <label for="title">Title</label><br>
+  {{input value=changeset.title id="title" class="form-control"}}
+</p>
+
+<p>
+  <label for="content">content</label><br>
+  {{textarea value=model.content id="content" class="form-control"}}
+</p>
+
+<button {{action 'save' authManager}} id="save">Save</button>

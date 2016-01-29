@@ -1,0 +1,28 @@
+<h4>Admin, model: {{model}}</h4>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <p class="panel-title">Admin Panel</p>
+  </div>
+
+  <div class="panel-body">
+    {{#bs-accordion}}
+      {{#bs-accordion-item title="Reports"}}{{/bs-accordion-item}}
+      {{#bs-accordion-item title="Create Section"}}
+        <form class="section-form">
+          <p>
+            <label for="name">Name</label>
+            {{input value=model.name id="name" class="form-control"}}
+          </p>
+
+          <p>
+            <label for="description">Description</label>
+            {{input value=model.description id="description" class="form-control"}}
+          </p>
+
+          <button {{action 'save' authManager}} id="save" class="btn btn-primary create-section-button">Save</button>
+        </form>
+      {{/bs-accordion-item}}
+      {{#bs-accordion-item title="Turn Admin"}}{{/bs-accordion-item}}
+    {{/bs-accordion}}
+  </div>
+</div>

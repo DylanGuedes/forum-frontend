@@ -1,0 +1,9 @@
+<h4>Topic/new, model: {{model}}</h4>
+<h2>New post for {{model.topic.name}}</h2>
+
+<p>
+  <label for="content">content</label><br>
+  {{input value=model.content id="content" class="form-control"}}
+</p>
+
+<button {{action 'save' authManager}} id="save">Save</button>

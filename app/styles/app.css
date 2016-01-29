@@ -1,3 +1,7 @@
+@import "admin.css";
+@import "util.css";
+
 .post-block {
   border: 1px solid #bbb;
 }
+

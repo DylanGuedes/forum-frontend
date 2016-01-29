@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import { test, moduleForModel } from 'ember-qunit';
 
 moduleForModel('user', 'User', { needs: ['model:user', 'model:topic', 'model:post', 'model:section'] });

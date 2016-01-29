@@ -7,6 +7,9 @@
           <li>{{#link-to 'user' authManager.currentUser}}{{authManager.currentUser.username}}{{/link-to}}</li>
           <li>{{#link-to 'users.index'}}Users{{/link-to}}</li>
           <li>{{#link-to 'sections.index'}}Sections{{/link-to}}</li>
+          {{#if authManager.currentUser.admin}}
+            <li>{{#link-to 'admin'}}Admin Panel{{/link-to}}</li>
+          {{/if}}
         {{else}}
           <li>{{#link-to 'users.new'}}Sign Up{{/link-to}}</li>
           <li>{{#link-to 'login'}}Signin{{/link-to}}</li>

@@ -1,5 +1,4 @@
-<h1>{{model.section.name}}</h1>
-
+<h4>Section/index, model: {{model}}, model/section: {{model.section}}, sectionid: {{model.sectionId}}, name: {{model.section.name}}</h4>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -8,11 +7,10 @@
       <th>Lead</th>
     </tr>
   </thead>
-
   <tbody>
     {{#each model.section.topics as |topic|}}
       <tr>
-        <td>{{#link-to 'topic.index' topic.id}}{{topic.title}}{{/link-to}}</td>
+        <td>{{#link-to 'section.topics.topic.index' topic.id}}{{topic.title}}{{/link-to}}</td>
         <td>{{topic.subtitle}}</td>
         <td>{{topic.content}}</td>
       </tr>
@@ -20,3 +18,4 @@
   </tbody>
 </table>
 
+{{#link-to "section.topics.new" class="btn btn-success"}}New topic{{/link-to}}

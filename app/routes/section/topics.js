@@ -1,9 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model(params) {
+  model() {
     return Ember.RSVP.hash({
-      section: this.store.find('section', params.section_id),
+      topic: this.modelFor('section.topics.topic'),
+      posts: this.store.findAll('post')
     });
   }
 });

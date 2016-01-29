@@ -1,4 +1,4 @@
-<h1>{{model.topic.title}}</h1>
+<h1>Topic/index model:{{model.id}}</h1>
 
 {{#each model.topic.posts as |node|}}
   <div class="row post-block">
@@ -11,3 +11,9 @@
     </div>
   </div>
 {{/each}}
+{{authManager}}
+
+model.id:{{model.id}}
+section:{{model.section.id}}
+
+{{#link-to 'topic.new' authManager.currentUser}}New post{{/link-to}}
