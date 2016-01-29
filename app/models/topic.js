@@ -6,5 +6,6 @@ export default DS.Model.extend({
   content: DS.attr(),
   section: DS.belongsTo('section', { async: true }),
   author: DS.belongsTo('user', { async: true }),
-  posts: DS.hasMany('post', { async: true })
+  posts: DS.hasMany('post', { async: true }),
+  createdAt: DS.attr()
 });

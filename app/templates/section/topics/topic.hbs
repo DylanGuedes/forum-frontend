@@ -1,1 +1,41 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <p class="panel-title">
+      {{model.topic.title}}
+    </p>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-3">
+        <p>{{gravatar-image email=model.topic.author.email size=70 class='img-circle'}}</p>
+        <p>{{model.topic.author.username}}</p>
+        <p>Posts: {{model.topic.author.postsCreated.length}}</p>
+      </div>
+      <div class="col-md-9">
+        {{model.topic.content}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#each model.topic.posts as |post|}}
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <p class="panel-title centered-text">{{post.createdAt}}</p>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-3">
+          <p>{{gravatar-image email=post.author.email size=70 class='img-circle'}}</p>
+          <p>{{post.author.username}}</p>
+          <p>Posts: {{post.author.postsCreated.length}}</p>
+        </div>
+        <div class="col-md-9">
+          {{post.content}}
+        </div>
+      </div>
+    </div>
+  </div>
+{{/each}}
+
 {{outlet}}

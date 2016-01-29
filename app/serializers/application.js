@@ -5,7 +5,8 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
   attrs: {
     author: 'author_id',
     user: { embedded: 'always' },
-    topic: 'topic_id'
+    topic: 'topic_id',
+    createdAt: 'created_at'
   },
   keyForAttributes: function(attr) {
     return Ember.String.underscore(attr).toUpperCase();
