@@ -1,8 +1,6 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <p class="panel-title">
-      {{model.topic.title}}
-    </p>
+    <p class="panel-title centered-text">{{moment-format topic.createdAt}}</p>
   </div>
   <div class="panel-body">
     <div class="row">
@@ -21,7 +19,7 @@
 {{#each model.topic.posts as |post|}}
   <div class="panel panel-default">
     <div class="panel-heading">
-      <p class="panel-title centered-text">{{post.createdAt}}</p>
+      <p class="panel-title centered-text">{{moment-format post.createdAt}}</p>
     </div>
     <div class="panel-body">
       <div class="row">
