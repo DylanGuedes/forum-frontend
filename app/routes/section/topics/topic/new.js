@@ -9,7 +9,7 @@ export default Ember.Route.extend({
     save: function(params) {
       var post = this.currentModel;
       post.set('author', params.currentUser);
-      var topic = this.modelFor('section.topics.topic');
+      var topic = this.modelFor('section.topics.topic').topic;
       post.set('topic', topic);
       post.save().then(() => {
         this.transitionTo('section.topics.topic');

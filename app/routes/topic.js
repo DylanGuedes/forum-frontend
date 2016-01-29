@@ -5,9 +5,11 @@ export default Ember.Route.extend({
     return this.modelFor('section').get('id');
   },
   model(params) {
-    return Ember.RSVP.hash({
-      topic: this.store.find('topic', params.topic_id),
-      section: this.get('store').find('section'),
+    var _this = this;
+    return this.store.find('topic', params.topic_id).then(function(topic) {
+      return Ember.RSVP.hash({
+        topic: topic,
+      });
     });
   },
 });

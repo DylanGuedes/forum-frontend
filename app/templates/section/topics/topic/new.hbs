@@ -14,7 +14,7 @@
         </div>
         <div class="col-md-4">
           <h4>Live Preview</h4>
-          {{model.content}}
+          {{markdown-to-html markdown=model.content}}
         </div>
       </div>
       <button {{action 'save' authManager}} id="save" class="btn btn-success create-section-button">Save</button>
