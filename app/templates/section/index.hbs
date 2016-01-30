@@ -3,25 +3,30 @@
   <li>{{model.section.name}}</li>
 </ol>
 
-{{model.section}}
-<h1>aqui</h1>
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Subtitle</th>
-      <th>Lead</th>
+      <th>Title(subtitle)</th>
+      <th>Author</th>
+      <th>Replies</th>
+      <th>Last Post</th>
     </tr>
   </thead>
   <tbody>
     {{#each model.section.topics as |topic|}}
       <tr>
-        <td>{{#link-to 'section.topics.topic.index' topic.id}}{{topic.title}}{{/link-to}}</td>
-        <td>{{topic.subtitle}}</td>
-        <td>{{topic.content}}</td>
+        <td>
+          {{#link-to 'section.topics.topic.index' topic.id}}{{topic.title}}{{/link-to}}
+          {{#if topic.subtitle}}
+            ({{topic.subtitle}})
+          {{/if}}
+        </td>
+        <td>{{linkto-user user=topic.author}}</td>
+        <td>{{topic.posts.length}}</td>
+        <td>{{moment-format topic.lastPost.createdAt}} - {{linkto-user user=topic.lastPost.author class="display-inline"}}</td>
       </tr>
     {{/each}}
   </tbody>
 </table>
 
-{{#link-to "section.topics.new" class="btn btn-success"}}New topic{{/link-to}}
+{{#link-to "section.topics.new"}}New topic{{/link-to}}

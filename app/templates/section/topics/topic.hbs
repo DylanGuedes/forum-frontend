@@ -20,9 +20,7 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-md-3">
-            <p>{{gravatar-image email=model.topic.author.email size=70 class='img-circle'}}</p>
-            <p>{{model.topic.author.username}}</p>
-            <p>Posts: {{model.topic.author.postsCreated.length}}</p>
+            {{post-author-block author=model.topic.author}}
           </div>
           <div class="col-md-9">
             {{markdown-to-html markdown=model.topic.content}}
@@ -39,9 +37,7 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-md-3">
-              <p>{{gravatar-image email=post.author.email size=70 class='img-circle'}}</p>
-              <p>{{post.author.username}}</p>
-              <p>Posts: {{post.author.postsCreated.length}}</p>
+              {{post-author-block author=post.author}}
             </div>
             <div class="col-md-9">
               {{markdown-to-html markdown=post.content}}
@@ -54,6 +50,6 @@
       </div>
     {{/each}}
 
-    {{outlet modal}}
+    {{outlet}}
   </div>
 </div>

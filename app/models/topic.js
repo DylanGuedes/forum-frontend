@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
@@ -7,5 +8,8 @@ export default DS.Model.extend({
   section: DS.belongsTo('section', { async: true }),
   author: DS.belongsTo('user', { async: true }),
   posts: DS.hasMany('post', { async: true }),
-  createdAt: DS.attr()
+  createdAt: DS.attr(),
+  lastPost: Ember.computed('posts', function() {
+    return this.get('posts').get('lastObject');
+  })
 });
