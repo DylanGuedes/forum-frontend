@@ -47,10 +47,13 @@
               {{markdown-to-html markdown=post.content}}
             </div>
           </div>
+          {{#if (eq authManager.currentUser.id post.author.id)}}
+            {{#link-to 'section.topics.topic.post.edit' post.id class="at-right"}}Edit{{/link-to}}
+          {{/if}}
         </div>
       </div>
     {{/each}}
 
-    {{outlet}}
+    {{outlet modal}}
   </div>
 </div>

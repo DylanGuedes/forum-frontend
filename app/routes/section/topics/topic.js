@@ -11,5 +11,13 @@ export default Ember.Route.extend({
         users: _this.store.findAll('user'),
       });
     });
+  },
+  actions: {
+    openModal: function(modalName) {
+      return this.render(modalName, {
+        into: 'section.topics.topic',
+        outlet: 'modal'
+      });
+    }
   }
 });
