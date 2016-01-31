@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    {{#each model.sections as |section|}}
+    {{#each model as |section|}}
       <tr>
         <td>{{#link-to 'section' section.id}}{{section.name}}{{/link-to}}</td>
         <td>{{section.description}}</td>
@@ -18,4 +18,5 @@
   </tbody>
 </table>
 
+{{page-numbers content=model}}
 

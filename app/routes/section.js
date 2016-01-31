@@ -6,7 +6,7 @@ export default Ember.Route.extend({
     return this.store.find('section', params.section_id).then(function(section) {
       return Ember.RSVP.hash({
         section: section,
-        topics: _this.store.findAll('topic')
+        topics: section.topics
       });
     });
   }

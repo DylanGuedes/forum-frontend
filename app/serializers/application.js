@@ -7,6 +7,7 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
     user: { embedded: 'always' },
     topic: 'topic_id',
     createdAt: 'created_at',
+    section: { key: 'section_id' },
     post: { key: 'post_id' }
   },
   serialize: function(record, options) {

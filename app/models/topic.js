@@ -9,7 +9,4 @@ export default DS.Model.extend({
   author: DS.belongsTo('user', { async: true }),
   posts: DS.hasMany('post', { async: true }),
   createdAt: DS.attr(),
-  lastPost: Ember.computed('posts', function() {
-    return this.get('posts').get('lastObject');
-  })
 });

@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    {{#each model.topic.posts as |post|}}
+    {{#each model.posts as |post|}}
       <div class="panel panel-default">
         <div class="panel-heading">
           <p class="panel-title centered-text">{{moment-format post.createdAt}}</p>
@@ -53,3 +53,5 @@
     {{outlet}}
   </div>
 </div>
+
+{{page-numbers content=pagedContent}}

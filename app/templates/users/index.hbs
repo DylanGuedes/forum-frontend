@@ -1,4 +1,3 @@
-<h4>Users/Index, model: {{model}}</h4>
 <h1>Registered Users</h1>
 
 <table class="table table-hover">
@@ -7,18 +6,20 @@
       <th>Id</th>
       <th>Username</th>
       <th>Name</th>
-      <th>Admin</th>
+      <th>Registered At</th>
     </tr>
   </thead>
 
   <tbody>
-    {{#each model.users as |user|}}
+    {{#each model as |user|}}
       <tr>
         <td>{{user.id}}</td>
         <td>{{#link-to 'user.index' user.id}}{{user.username}}{{/link-to}}</td>
         <td>{{user.name}}</td>
-        <td>{{user.admin}}</td>
+        <td>{{moment-format user.createdAt}}</td>
       </tr>
     {{/each}}
   </tbody>
 </table>
+
+{{page-numbers content=model}}

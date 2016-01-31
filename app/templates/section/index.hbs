@@ -13,7 +13,7 @@
     </tr>
   </thead>
   <tbody>
-    {{#each model.section.topics as |topic|}}
+    {{#each pagedContent as |topic|}}
       <tr>
         <td>
           {{#link-to 'section.topics.topic.index' topic.id}}{{topic.title}}{{/link-to}}
@@ -23,10 +23,12 @@
         </td>
         <td>{{linkto-user user=topic.author}}</td>
         <td>{{topic.posts.length}}</td>
-        <td>{{moment-format topic.lastPost.createdAt}} - {{linkto-user user=topic.lastPost.author class="display-inline"}}</td>
+        <td>{{moment-format topic}} - {{linkto-user user=topic.author class="display-inline"}}</td>
       </tr>
     {{/each}}
   </tbody>
 </table>
+
+{{page-numbers content=pagedContent}}
 
 {{#link-to "section.topics.new"}}New topic{{/link-to}}
