@@ -1,6 +1,6 @@
 <ol class="breadcrumb">
-  <li>{{#link-to 'index'}}Home{{/link-to}}</li>
-  <li>{{model.section.name}}</li>
+  <li>{{#link-to 'sections.index'}}Home{{/link-to}}</li>
+  <li>{{model.get('firstElement').name}}</li>
 </ol>
 
 <table class="table table-hover">
@@ -13,7 +13,7 @@
     </tr>
   </thead>
   <tbody>
-    {{#each pagedContent as |topic|}}
+    {{#each model as |topic|}}
       <tr>
         <td>
           {{#link-to 'section.topics.topic.index' topic.id}}{{topic.title}}{{/link-to}}
@@ -29,6 +29,6 @@
   </tbody>
 </table>
 
-{{page-numbers content=pagedContent}}
+{{page-numbers content=model}}
 
 {{#link-to "section.topics.new"}}New topic{{/link-to}}

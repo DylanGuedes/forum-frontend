@@ -1,24 +1,23 @@
 import Ember from 'ember';
+import RouteMixin from 'ember-cli-pagination/remote/route-mixin';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(RouteMixin, {
+  perPage: 20,
+
   model: function(params) {
+    var _this = this;
+    params.paramMapping = {
+      page: "page",
+      perPage: "page_size",
+      total_pages: "total_pages"
+    };
     console.log("params:");
     console.log(params);
-    var _this = this;
-    return this.store.find('topic', params.topic_id).then(function(topic) {
+    return this.store.find('topic', params.topic_id).then((topic) => {
       return Ember.RSVP.hash({
-        topic: topic,
-        section: _this.modelFor('section'),
-        posts: topic.posts
+        posts: _this.findPaged('post', params),
+        topic: topic
       });
     });
   },
-  actions: {
-    openModal: function(modalName) {
-      return this.render(modalName, {
-        into: 'section.topics.topic',
-        outlet: 'modal'
-      });
-    }
-  }
 });

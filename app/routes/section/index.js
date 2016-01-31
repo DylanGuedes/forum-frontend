@@ -5,10 +5,12 @@ export default Ember.Route.extend(RouteMixin, {
   perPage: 20,
   model: function(params) {
     var section = this.modelFor('section').section;
-    console.log(section);
-    console.log(section.id);
     params["section_id"] = section.id;
-    console.log(params);
+    params.paramMapping = {
+      page: "page",
+      perPage: "page_size",
+      total_pages: "total_pages"
+    };
     return this.findPaged('topic', params);
   }
 });

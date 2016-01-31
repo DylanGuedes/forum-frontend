@@ -1,5 +1,5 @@
 <ol class="breadcrumb">
-  <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+  <li>{{#link-to 'sections.index'}}Home{{/link-to}}</li>
   <li>{{#link-to 'section.index' model.topic.section.id}}{{model.topic.section.name}}{{/link-to}}</li>
   <li>{{model.topic.title}}</li>
 </ol>
@@ -15,7 +15,7 @@
   <div class="panel-body">
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <p class="panel-title centered-text">{{moment-format topic.createdAt}}</p>
+        <p class="panel-title centered-text">{{moment-format model.topic.createdAt}}</p>
       </div>
       <div class="panel-body">
         <div class="row">
@@ -54,4 +54,4 @@
   </div>
 </div>
 
-{{page-numbers content=pagedContent}}
+{{page-numbers content=model.posts}}
